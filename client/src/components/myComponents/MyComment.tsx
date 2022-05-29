@@ -36,7 +36,7 @@ export default function MyComment() {
 
 	async function Comments() {
 		const comment = await axios.get(
-			"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/mypage/comments",
+			"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/mypage/comments",
 			{
 				withCredentials: true,
 			}

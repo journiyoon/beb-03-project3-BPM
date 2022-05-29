@@ -43,7 +43,7 @@ export default function MusicReview() {
 
 	async function getReview() {
 		let res = await axios.get(
-			"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/review"
+			"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/review"
 		);
 		let reviewPostData = res.data.data;
 		return reviewPostData;
