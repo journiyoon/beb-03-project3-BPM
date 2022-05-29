@@ -42,7 +42,7 @@ export default function MusicReview() {
 	};
 
 	async function getReview() {
-		let res = await axios.get("https://bpmserver.cfreview");
+		let res = await axios.get("https://bpmserver.cf/review");
 		let reviewPostData = res.data.data;
 		return reviewPostData;
 	}

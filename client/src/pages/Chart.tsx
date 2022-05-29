@@ -18,12 +18,12 @@ import { borderTop } from "@mui/system";
 
 export default function Chart() {
 	async function getOurChart() {
-		const ourChart = await axios.get("https://bpmserver.cfmain/ourchart");
+		const ourChart = await axios.get("https://bpmserver.cf/main/ourchart");
 		return ourChart.data.data;
 	}
 
 	async function getAllChart() {
-		const allChart = await axios.get("https://bpmserver.cfmain/allchart");
+		const allChart = await axios.get("https://bpmserver.cf/main/allchart");
 		return allChart.data.data;
 	}
 	return (

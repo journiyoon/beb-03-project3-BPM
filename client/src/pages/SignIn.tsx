@@ -37,7 +37,7 @@ export default function SignIn() {
 	const disconnet = () => {
 		provider = null;
 		axios
-			.post("https://bpmserver.cfuser/logout", { withCredentials: true })
+			.post("https://bpmserver.cf/user/logout", { withCredentials: true })
 			.then(() => {
 				dispatch(unsetUser());
 			});
@@ -46,7 +46,7 @@ export default function SignIn() {
 	const onSign = (address: string) => {
 		axios
 			.post(
-				"https://bpmserver.cfuser/signin",
+				"https://bpmserver.cf/user/signin",
 				{
 					address: address,
 				},

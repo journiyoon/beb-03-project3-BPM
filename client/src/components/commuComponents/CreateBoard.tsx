@@ -43,7 +43,7 @@ export default function CreateBoard() {
 			)
 			.then((res: any) => {
 				axios
-					.post("https://bpmserver.cfboard/create", {
+					.post("https://bpmserver.cf/board/create", {
 						title: title,
 						subtitle: subtitle,
 					})

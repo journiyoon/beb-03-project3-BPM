@@ -29,7 +29,7 @@ export default function SignUp() {
 			setValidation("이메일을 입력해주세요");
 		} else {
 			axios
-				.post("https://bpmserver.cfuser/signup", {
+				.post("https://bpmserver.cf/user/signup", {
 					address: userInfo.address,
 					username: formData.get("username"),
 					email: formData.get("email"),

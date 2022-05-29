@@ -43,7 +43,7 @@ export default function Column() {
 	};
 
 	async function getReview() {
-		let res = await axios.get("https://bpmserver.cfcolumn");
+		let res = await axios.get("https://bpmserver.cf/column");
 		let columnData = res.data.data;
 		return columnData;
 	}

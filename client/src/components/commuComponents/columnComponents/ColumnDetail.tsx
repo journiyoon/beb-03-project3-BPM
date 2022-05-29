@@ -17,7 +17,7 @@ export default function ColumnDetail() {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		axios.get(`https://bpmserver.cfcolumn/${params.columnid}`).then((res) => {
+		axios.get(`https://bpmserver.cf/column/${params.columnid}`).then((res) => {
 			const column = res.data.data;
 			setData(column);
 		});
@@ -26,7 +26,7 @@ export default function ColumnDetail() {
 	useEffect(() => {
 		if (userInfo !== null) {
 			axios
-				.get(`https://bpmserver.cfcolumn/${params.columnid}/checklike`, {
+				.get(`https://bpmserver.cf/column/${params.columnid}/checklike`, {
 					withCredentials: true,
 				})
 				.then((res) => {
@@ -52,7 +52,7 @@ export default function ColumnDetail() {
 			if (like === "like") {
 				axios
 					.post(
-						`https://bpmserver.cfcolumn/${params.columnid}/like`,
+						`https://bpmserver.cf/column/${params.columnid}/like`,
 						{},
 						{
 							withCredentials: true,
@@ -70,7 +70,7 @@ export default function ColumnDetail() {
 			} else if (like === "unlike") {
 				axios
 					.post(
-						`https://bpmserver.cfcolumn/${params.columnid}/unlike`,
+						`https://bpmserver.cf/column/${params.columnid}/unlike`,
 						{},
 						{
 							withCredentials: true,
