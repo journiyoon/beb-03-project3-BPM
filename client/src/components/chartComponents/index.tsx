@@ -15,7 +15,7 @@ export default function ChartDetail() {
 
 	async function getDetail() {
 		const detail = await axios.get(
-			`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/main/detail/${params.chartid}`
+			`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/main/detail/${params.chartid}`
 		);
 		return detail.data.data;
 	}
