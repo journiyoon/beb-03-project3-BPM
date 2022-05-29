@@ -64,7 +64,7 @@ export default function MusicDetail() {
 	};
 
 	useEffect(() => {
-		axios.get(`https://bpmserver.cfreview/${params.reviewid}`).then((res) => {
+		axios.get(`https://bpmserver.cf/review/${params.reviewid}`).then((res) => {
 			let musicDetailData = res.data.data;
 			setData(musicDetailData);
 		});
@@ -73,7 +73,7 @@ export default function MusicDetail() {
 	useEffect(() => {
 		if (userInfo !== null) {
 			axios
-				.get(`https://bpmserver.cfreview/${params.reviewid}/checklike`, {
+				.get(`https://bpmserver.cf/review/${params.reviewid}/checklike`, {
 					withCredentials: true,
 				})
 				.then((res) => {
@@ -102,7 +102,7 @@ export default function MusicDetail() {
 			} else {
 				axios
 					.post(
-						`https://bpmserver.cfreview/${params.reviewid}/comment`,
+						`https://bpmserver.cf/review/${params.reviewid}/comment`,
 						{
 							content: comment,
 						},
@@ -131,7 +131,7 @@ export default function MusicDetail() {
 		} else {
 			axios
 				.patch(
-					`https://bpmserver.cfreview/${params.reviewid}/comment/${params.commentid}`,
+					`https://bpmserver.cf/review/${params.reviewid}/comment/${params.commentid}`,
 					{
 						content: comment,
 					},
@@ -168,7 +168,7 @@ export default function MusicDetail() {
 			if (like === "like") {
 				axios
 					.post(
-						`https://bpmserver.cfreview/${params.reviewid}/like`,
+						`https://bpmserver.cf/review/${params.reviewid}/like`,
 						{},
 						{
 							withCredentials: true,
@@ -186,7 +186,7 @@ export default function MusicDetail() {
 			} else if (like === "unlike") {
 				axios
 					.post(
-						`https://bpmserver.cfreview/${params.reviewid}/unlike`,
+						`https://bpmserver.cf/review/${params.reviewid}/unlike`,
 						{},
 						{
 							withCredentials: true,

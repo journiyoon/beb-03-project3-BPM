@@ -42,7 +42,7 @@ export default function FreeBoard() {
 	};
 
 	async function getBoard() {
-		let res = await axios.get(`https://bpmserver.cfpost/${params.boardid}`);
+		let res = await axios.get(`https://bpmserver.cf/post/${params.boardid}`);
 		let boardPostData = res.data.data;
 		return boardPostData;
 	}

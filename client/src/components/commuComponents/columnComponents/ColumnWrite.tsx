@@ -36,7 +36,7 @@ export default function ColumnWrite() {
 		setBody(event.target.value);
 	}
 	const getChart = async () => {
-		const chart = await axios.get("https://bpmserver.cfmain/allchart");
+		const chart = await axios.get("https://bpmserver.cf/main/allchart");
 		return chart.data.data;
 	};
 	useEffect(() => {
@@ -48,7 +48,7 @@ export default function ColumnWrite() {
 			if (state) {
 				await axios
 					.patch(
-						`https://bpmserver.cfcolumn/${state.id}`,
+						`https://bpmserver.cf/column/${state.id}`,
 						{
 							title,
 							body,
@@ -69,7 +69,7 @@ export default function ColumnWrite() {
 			} else {
 				await axios
 					.post(
-						`https://bpmserver.cfcolumn/create`,
+						`https://bpmserver.cf/column/create`,
 						{
 							title,
 							musictitle,

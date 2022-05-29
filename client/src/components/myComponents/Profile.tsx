@@ -16,7 +16,7 @@ export default function Profile() {
 
 	useEffect(() => {
 		axios
-			.get("https://bpmserver.cfuser/mypage", {
+			.get("https://bpmserver.cf/user/mypage", {
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -42,7 +42,7 @@ export default function Profile() {
 			}
 			axios
 				.patch(
-					"https://bpmserver.cfuser/update",
+					"https://bpmserver.cf/user/update",
 					{
 						username: formData.get("username"),
 					},
@@ -61,7 +61,7 @@ export default function Profile() {
 		} else if (formData.get("email")) {
 			axios
 				.patch(
-					"https://bpmserver.cfuser/update",
+					"https://bpmserver.cf/user/update",
 					{
 						email: formData.get("email"),
 					},
@@ -75,7 +75,7 @@ export default function Profile() {
 		} else if (formData.get("desc")) {
 			axios
 				.patch(
-					"https://bpmserver.cfuser/update",
+					"https://bpmserver.cf/user/update",
 					{
 						desc: formData.get("desc"),
 					},

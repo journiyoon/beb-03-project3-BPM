@@ -64,7 +64,7 @@ export default function PostDetail() {
 
 	useEffect(() => {
 		axios
-			.get(`https://bpmserver.cfpost/${params.boardid}/${params.postid}`)
+			.get(`https://bpmserver.cf/post/${params.boardid}/${params.postid}`)
 			.then((res) => {
 				let postDetailData = res.data.data;
 				setData(postDetailData);
@@ -75,7 +75,7 @@ export default function PostDetail() {
 		if (userInfo !== null) {
 			axios
 				.get(
-					`https://bpmserver.cfpost/${params.boardid}/${params.postid}/checklike`,
+					`https://bpmserver.cf/post/${params.boardid}/${params.postid}/checklike`,
 					{
 						withCredentials: true,
 					}
@@ -106,7 +106,7 @@ export default function PostDetail() {
 			} else {
 				axios
 					.post(
-						`https://bpmserver.cfpost/${params.boardid}/${params.postid}/comment`,
+						`https://bpmserver.cf/post/${params.boardid}/${params.postid}/comment`,
 						{
 							body: comment,
 						},
@@ -140,7 +140,7 @@ export default function PostDetail() {
 		} else {
 			axios
 				.patch(
-					`https://bpmserver.cfpost/${params.boardid}/${params.postid}/comment/${params.commentid}`,
+					`https://bpmserver.cf/post/${params.boardid}/${params.postid}/comment/${params.commentid}`,
 					{
 						body: comment,
 					},
@@ -176,7 +176,7 @@ export default function PostDetail() {
 			if (like === "like") {
 				axios
 					.post(
-						`https://bpmserver.cfpost/${params.boardid}/${params.postid}/like`,
+						`https://bpmserver.cf/post/${params.boardid}/${params.postid}/like`,
 						{},
 						{
 							withCredentials: true,
@@ -194,7 +194,7 @@ export default function PostDetail() {
 			} else if (like === "unlike") {
 				axios
 					.post(
-						`https://bpmserver.cfpost/${params.boardid}/${params.postid}/unlike`,
+						`https://bpmserver.cf/post/${params.boardid}/${params.postid}/unlike`,
 						{},
 						{
 							withCredentials: true,

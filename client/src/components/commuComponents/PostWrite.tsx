@@ -36,7 +36,7 @@ export default function PostWrite() {
 			if (state) {
 				await axios
 					.patch(
-						`https://bpmserver.cfpost/${params.boardid}/${state.id}`,
+						`https://bpmserver.cf/post/${params.boardid}/${state.id}`,
 						{
 							title,
 							body,
@@ -57,7 +57,7 @@ export default function PostWrite() {
 			} else {
 				await axios
 					.post(
-						`https://bpmserver.cfpost/${params.boardid}/create`,
+						`https://bpmserver.cf/post/${params.boardid}/create`,
 						{
 							title,
 							body,

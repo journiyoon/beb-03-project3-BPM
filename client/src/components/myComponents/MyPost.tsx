@@ -35,7 +35,7 @@ export default function MyPost() {
 	};
 
 	async function Posts() {
-		const post = await axios.get("https://bpmserver.cfmypage/posts", {
+		const post = await axios.get("https://bpmserver.cf/mypage/posts", {
 			withCredentials: true,
 		});
 		return post.data.data;

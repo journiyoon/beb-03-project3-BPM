@@ -15,7 +15,7 @@ export default function ChartDetail() {
 
 	async function getDetail() {
 		const detail = await axios.get(
-			`https://bpmserver.cfmain/detail/${params.chartid}`
+			`https://bpmserver.cf/main/detail/${params.chartid}`
 		);
 		return detail.data.data;
 	}

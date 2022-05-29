@@ -29,7 +29,7 @@ export default function CommuNav() {
 	const isMdUp = useMediaQuery(theme.breakpoints.up("lg"));
 
 	useEffect(() => {
-		axios.get("https://bpmserver.cfboard/read").then((res) => {
+		axios.get("https://bpmserver.cf/board/read").then((res) => {
 			setData(res.data.data);
 		});
 	}, []);

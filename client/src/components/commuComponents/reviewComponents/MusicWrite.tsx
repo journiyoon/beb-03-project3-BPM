@@ -45,7 +45,7 @@ export default function MusicWrite() {
 		setBody(event.target.value);
 	}
 	const getChart = async () => {
-		const chart = await axios.get("https://bpmserver.cfmain/allchart");
+		const chart = await axios.get("https://bpmserver.cf/main/allchart");
 		return chart.data.data;
 	};
 	useEffect(() => {
@@ -81,7 +81,7 @@ export default function MusicWrite() {
 				if (state) {
 					await axios
 						.patch(
-							`https://bpmserver.cfreview/${state.id}`,
+							`https://bpmserver.cf/review/${state.id}`,
 							{
 								body,
 								evaluation: {
@@ -108,7 +108,7 @@ export default function MusicWrite() {
 				} else {
 					await axios
 						.post(
-							`https://bpmserver.cfreview`,
+							`https://bpmserver.cf/review`,
 							{
 								title,
 								body,
