@@ -17,25 +17,18 @@ export default function ColumnDetail() {
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
-		axios
-			.get(
-				`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}`
-			)
-			.then((res) => {
-				const column = res.data.data;
-				setData(column);
-			});
+		axios.get(`https://bpmserver.cfcolumn/${params.columnid}`).then((res) => {
+			const column = res.data.data;
+			setData(column);
+		});
 	}, [like]);
 
 	useEffect(() => {
 		if (userInfo !== null) {
 			axios
-				.get(
-					`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}/checklike`,
-					{
-						withCredentials: true,
-					}
-				)
+				.get(`https://bpmserver.cfcolumn/${params.columnid}/checklike`, {
+					withCredentials: true,
+				})
 				.then((res) => {
 					if (res.data.message === "ok") {
 						setLike(true);
@@ -59,7 +52,7 @@ export default function ColumnDetail() {
 			if (like === "like") {
 				axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}/like`,
+						`https://bpmserver.cfcolumn/${params.columnid}/like`,
 						{},
 						{
 							withCredentials: true,
@@ -77,7 +70,7 @@ export default function ColumnDetail() {
 			} else if (like === "unlike") {
 				axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}/unlike`,
+						`https://bpmserver.cfcolumn/${params.columnid}/unlike`,
 						{},
 						{
 							withCredentials: true,

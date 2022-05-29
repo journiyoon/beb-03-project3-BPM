@@ -43,9 +43,7 @@ export default function Column() {
 	};
 
 	async function getReview() {
-		let res = await axios.get(
-			"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column"
-		);
+		let res = await axios.get("https://bpmserver.cfcolumn");
 		let columnData = res.data.data;
 		return columnData;
 	}

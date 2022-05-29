@@ -29,14 +29,11 @@ export default function SignUp() {
 			setValidation("이메일을 입력해주세요");
 		} else {
 			axios
-				.post(
-					"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/signup",
-					{
-						address: userInfo.address,
-						username: formData.get("username"),
-						email: formData.get("email"),
-					}
-				)
+				.post("https://bpmserver.cfuser/signup", {
+					address: userInfo.address,
+					username: formData.get("username"),
+					email: formData.get("email"),
+				})
 				.then((res) => {
 					dispatch(unsetUser());
 					dispatch(setUser(res.data.data));

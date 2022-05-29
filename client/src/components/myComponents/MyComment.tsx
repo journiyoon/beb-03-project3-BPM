@@ -35,12 +35,9 @@ export default function MyComment() {
 	};
 
 	async function Comments() {
-		const comment = await axios.get(
-			"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/mypage/comments",
-			{
-				withCredentials: true,
-			}
-		);
+		const comment = await axios.get("https://bpmserver.cfmypage/comments", {
+			withCredentials: true,
+		});
 		return comment.data.data;
 	}
 

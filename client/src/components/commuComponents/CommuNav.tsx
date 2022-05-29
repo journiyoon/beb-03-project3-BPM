@@ -29,13 +29,9 @@ export default function CommuNav() {
 	const isMdUp = useMediaQuery(theme.breakpoints.up("lg"));
 
 	useEffect(() => {
-		axios
-			.get(
-				"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/board/read"
-			)
-			.then((res) => {
-				setData(res.data.data);
-			});
+		axios.get("https://bpmserver.cfboard/read").then((res) => {
+			setData(res.data.data);
+		});
 	}, []);
 
 	const toggleDrawer =

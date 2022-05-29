@@ -64,25 +64,18 @@ export default function MusicDetail() {
 	};
 
 	useEffect(() => {
-		axios
-			.get(
-				`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/review/${params.reviewid}`
-			)
-			.then((res) => {
-				let musicDetailData = res.data.data;
-				setData(musicDetailData);
-			});
+		axios.get(`https://bpmserver.cfreview/${params.reviewid}`).then((res) => {
+			let musicDetailData = res.data.data;
+			setData(musicDetailData);
+		});
 	}, [like, commentEventFlag]);
 
 	useEffect(() => {
 		if (userInfo !== null) {
 			axios
-				.get(
-					`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/review/${params.reviewid}/checklike`,
-					{
-						withCredentials: true,
-					}
-				)
+				.get(`https://bpmserver.cfreview/${params.reviewid}/checklike`, {
+					withCredentials: true,
+				})
 				.then((res) => {
 					if (res.data.message === "ok") {
 						setLike(true);
@@ -109,7 +102,7 @@ export default function MusicDetail() {
 			} else {
 				axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/review/${params.reviewid}/comment`,
+						`https://bpmserver.cfreview/${params.reviewid}/comment`,
 						{
 							content: comment,
 						},
@@ -138,7 +131,7 @@ export default function MusicDetail() {
 		} else {
 			axios
 				.patch(
-					`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/review/${params.reviewid}/comment/${params.commentid}`,
+					`https://bpmserver.cfreview/${params.reviewid}/comment/${params.commentid}`,
 					{
 						content: comment,
 					},
@@ -175,7 +168,7 @@ export default function MusicDetail() {
 			if (like === "like") {
 				axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/review/${params.reviewid}/like`,
+						`https://bpmserver.cfreview/${params.reviewid}/like`,
 						{},
 						{
 							withCredentials: true,
@@ -193,7 +186,7 @@ export default function MusicDetail() {
 			} else if (like === "unlike") {
 				axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/review/${params.reviewid}/unlike`,
+						`https://bpmserver.cfreview/${params.reviewid}/unlike`,
 						{},
 						{
 							withCredentials: true,
