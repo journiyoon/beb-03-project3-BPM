@@ -44,7 +44,7 @@ export default function CreateBoard() {
 			.then((res: any) => {
 				axios
 					.post(
-						"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/board/create",
+						"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/board/create",
 						{
 							title: title,
 							subtitle: subtitle,

@@ -36,7 +36,7 @@ export default function PostWrite() {
 			if (state) {
 				await axios
 					.patch(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${state.id}`,
+						`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${state.id}`,
 						{
 							title,
 							body,
@@ -57,7 +57,7 @@ export default function PostWrite() {
 			} else {
 				await axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/create`,
+						`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/create`,
 						{
 							title,
 							body,

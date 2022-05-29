@@ -19,14 +19,14 @@ import { borderTop } from "@mui/system";
 export default function Chart() {
 	async function getOurChart() {
 		const ourChart = await axios.get(
-			"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/main/ourchart"
+			"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/main/ourchart"
 		);
 		return ourChart.data.data;
 	}
 
 	async function getAllChart() {
 		const allChart = await axios.get(
-			"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/main/allchart"
+			"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/main/allchart"
 		);
 		return allChart.data.data;
 	}

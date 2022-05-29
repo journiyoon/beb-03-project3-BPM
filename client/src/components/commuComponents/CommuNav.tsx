@@ -31,7 +31,7 @@ export default function CommuNav() {
 	useEffect(() => {
 		axios
 			.get(
-				"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/board/read"
+				"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/board/read"
 			)
 			.then((res) => {
 				setData(res.data.data);

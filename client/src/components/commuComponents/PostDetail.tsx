@@ -65,7 +65,7 @@ export default function PostDetail() {
 	useEffect(() => {
 		axios
 			.get(
-				`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}`
+				`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}`
 			)
 			.then((res) => {
 				let postDetailData = res.data.data;
@@ -77,7 +77,7 @@ export default function PostDetail() {
 		if (userInfo !== null) {
 			axios
 				.get(
-					`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}/checklike`,
+					`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}/checklike`,
 					{
 						withCredentials: true,
 					}
@@ -108,7 +108,7 @@ export default function PostDetail() {
 			} else {
 				axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}/comment`,
+						`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}/comment`,
 						{
 							body: comment,
 						},
@@ -142,7 +142,7 @@ export default function PostDetail() {
 		} else {
 			axios
 				.patch(
-					`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}/comment/${params.commentid}`,
+					`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}/comment/${params.commentid}`,
 					{
 						body: comment,
 					},
@@ -178,7 +178,7 @@ export default function PostDetail() {
 			if (like === "like") {
 				axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}/like`,
+						`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}/like`,
 						{},
 						{
 							withCredentials: true,
@@ -196,7 +196,7 @@ export default function PostDetail() {
 			} else if (like === "unlike") {
 				axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}/unlike`,
+						`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/post/${params.boardid}/${params.postid}/unlike`,
 						{},
 						{
 							withCredentials: true,
