@@ -37,7 +37,7 @@ export default function ColumnWrite() {
 	}
 	const getChart = async () => {
 		const chart = await axios.get(
-			"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/main/allchart"
+			"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/main/allchart"
 		);
 		return chart.data.data;
 	};
@@ -50,7 +50,7 @@ export default function ColumnWrite() {
 			if (state) {
 				await axios
 					.patch(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${state.id}`,
+						`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${state.id}`,
 						{
 							title,
 							body,
@@ -71,7 +71,7 @@ export default function ColumnWrite() {
 			} else {
 				await axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/create`,
+						`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/create`,
 						{
 							title,
 							musictitle,

@@ -19,7 +19,7 @@ export default function ColumnDetail() {
 	useEffect(() => {
 		axios
 			.get(
-				`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}`
+				`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}`
 			)
 			.then((res) => {
 				const column = res.data.data;
@@ -31,7 +31,7 @@ export default function ColumnDetail() {
 		if (userInfo !== null) {
 			axios
 				.get(
-					`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}/checklike`,
+					`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}/checklike`,
 					{
 						withCredentials: true,
 					}
@@ -59,7 +59,7 @@ export default function ColumnDetail() {
 			if (like === "like") {
 				axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}/like`,
+						`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}/like`,
 						{},
 						{
 							withCredentials: true,
@@ -77,7 +77,7 @@ export default function ColumnDetail() {
 			} else if (like === "unlike") {
 				axios
 					.post(
-						`https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}/unlike`,
+						`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/column/${params.columnid}/unlike`,
 						{},
 						{
 							withCredentials: true,

@@ -30,7 +30,7 @@ export default function SignUp() {
 		} else {
 			axios
 				.post(
-					"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/signup",
+					"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/signup",
 					{
 						address: userInfo.address,
 						username: formData.get("username"),

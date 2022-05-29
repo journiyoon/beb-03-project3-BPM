@@ -36,7 +36,7 @@ export default function MyPost() {
 
 	async function Posts() {
 		const post = await axios.get(
-			"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/mypage/posts",
+			"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/mypage/posts",
 			{
 				withCredentials: true,
 			}

@@ -38,7 +38,7 @@ export default function SignIn() {
 		provider = null;
 		axios
 			.post(
-				"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/logout",
+				"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/logout",
 				{ withCredentials: true }
 			)
 			.then(() => {
@@ -49,7 +49,7 @@ export default function SignIn() {
 	const onSign = (address: string) => {
 		axios
 			.post(
-				"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/signin",
+				"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/signin",
 				{
 					address: address,
 				},
