@@ -36,6 +36,13 @@ export default function MyReview() {
 
 	async function Reviews() {
 		const review = await axios.get("https://bpmserver.cf/mypage/reviews", {
+			headers: {
+				Accept: "application/json",
+
+				"Content-Type": "application/json",
+
+				Cache: "no-cache",
+			},
 			withCredentials: true,
 		});
 		console.log(review.data.data);

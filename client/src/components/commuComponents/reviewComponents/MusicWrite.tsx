@@ -92,7 +92,16 @@ export default function MusicWrite() {
 									Addictive,
 								},
 							},
-							{ withCredentials: true }
+							{
+								headers: {
+									Accept: "application/json",
+
+									"Content-Type": "application/json",
+
+									Cache: "no-cache",
+								},
+								withCredentials: true,
+							}
 						)
 						.then((res) => {
 							window.alert("리뷰가 수정되었습니다.");
@@ -121,6 +130,13 @@ export default function MusicWrite() {
 								},
 							},
 							{
+								headers: {
+									Accept: "application/json",
+
+									"Content-Type": "application/json",
+
+									Cache: "no-cache",
+								},
 								withCredentials: true,
 							}
 						)

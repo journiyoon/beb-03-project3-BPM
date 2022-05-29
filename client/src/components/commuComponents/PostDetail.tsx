@@ -77,6 +77,13 @@ export default function PostDetail() {
 				.get(
 					`https://bpmserver.cf/post/${params.boardid}/${params.postid}/checklike`,
 					{
+						headers: {
+							Accept: "application/json",
+
+							"Content-Type": "application/json",
+
+							Cache: "no-cache",
+						},
 						withCredentials: true,
 					}
 				)
@@ -111,6 +118,13 @@ export default function PostDetail() {
 							body: comment,
 						},
 						{
+							headers: {
+								Accept: "application/json",
+
+								"Content-Type": "application/json",
+
+								Cache: "no-cache",
+							},
 							withCredentials: true,
 						}
 					)
@@ -145,6 +159,13 @@ export default function PostDetail() {
 						body: comment,
 					},
 					{
+						headers: {
+							Accept: "application/json",
+
+							"Content-Type": "application/json",
+
+							Cache: "no-cache",
+						},
 						withCredentials: true,
 					}
 				)
@@ -179,6 +200,13 @@ export default function PostDetail() {
 						`https://bpmserver.cf/post/${params.boardid}/${params.postid}/like`,
 						{},
 						{
+							headers: {
+								Accept: "application/json",
+
+								"Content-Type": "application/json",
+
+								Cache: "no-cache",
+							},
 							withCredentials: true,
 						}
 					)
@@ -197,6 +225,13 @@ export default function PostDetail() {
 						`https://bpmserver.cf/post/${params.boardid}/${params.postid}/unlike`,
 						{},
 						{
+							headers: {
+								Accept: "application/json",
+
+								"Content-Type": "application/json",
+
+								Cache: "no-cache",
+							},
 							withCredentials: true,
 						}
 					)

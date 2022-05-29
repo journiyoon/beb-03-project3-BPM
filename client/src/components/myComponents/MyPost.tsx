@@ -36,6 +36,13 @@ export default function MyPost() {
 
 	async function Posts() {
 		const post = await axios.get("https://bpmserver.cf/mypage/posts", {
+			headers: {
+				Accept: "application/json",
+
+				"Content-Type": "application/json",
+
+				Cache: "no-cache",
+			},
 			withCredentials: true,
 		});
 		return post.data.data;

@@ -74,6 +74,13 @@ export default function MusicDetail() {
 		if (userInfo !== null) {
 			axios
 				.get(`https://bpmserver.cf/review/${params.reviewid}/checklike`, {
+					headers: {
+						Accept: "application/json",
+
+						"Content-Type": "application/json",
+
+						Cache: "no-cache",
+					},
 					withCredentials: true,
 				})
 				.then((res) => {
@@ -107,6 +114,13 @@ export default function MusicDetail() {
 							content: comment,
 						},
 						{
+							headers: {
+								Accept: "application/json",
+
+								"Content-Type": "application/json",
+
+								Cache: "no-cache",
+							},
 							withCredentials: true,
 						}
 					)
@@ -136,6 +150,13 @@ export default function MusicDetail() {
 						content: comment,
 					},
 					{
+						headers: {
+							Accept: "application/json",
+
+							"Content-Type": "application/json",
+
+							Cache: "no-cache",
+						},
 						withCredentials: true,
 					}
 				)
@@ -171,6 +192,13 @@ export default function MusicDetail() {
 						`https://bpmserver.cf/review/${params.reviewid}/like`,
 						{},
 						{
+							headers: {
+								Accept: "application/json",
+
+								"Content-Type": "application/json",
+
+								Cache: "no-cache",
+							},
 							withCredentials: true,
 						}
 					)
@@ -189,6 +217,13 @@ export default function MusicDetail() {
 						`https://bpmserver.cf/review/${params.reviewid}/unlike`,
 						{},
 						{
+							headers: {
+								Accept: "application/json",
+
+								"Content-Type": "application/json",
+
+								Cache: "no-cache",
+							},
 							withCredentials: true,
 						}
 					)

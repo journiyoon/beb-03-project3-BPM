@@ -37,7 +37,16 @@ export default function SignIn() {
 	const disconnet = () => {
 		provider = null;
 		axios
-			.post("https://bpmserver.cf/user/logout", { withCredentials: true })
+			.post("https://bpmserver.cf/user/logout", {
+				headers: {
+					Accept: "application/json",
+
+					"Content-Type": "application/json",
+
+					Cache: "no-cache",
+				},
+				withCredentials: true,
+			})
 			.then(() => {
 				dispatch(unsetUser());
 			});
@@ -51,6 +60,13 @@ export default function SignIn() {
 					address: address,
 				},
 				{
+					headers: {
+						Accept: "application/json",
+
+						"Content-Type": "application/json",
+
+						Cache: "no-cache",
+					},
 					withCredentials: true,
 				}
 			)
