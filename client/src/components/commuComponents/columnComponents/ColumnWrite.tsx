@@ -53,7 +53,16 @@ export default function ColumnWrite() {
 							title,
 							body,
 						},
-						{ withCredentials: true }
+						{
+							headers: {
+								Accept: "application/json",
+
+								"Content-Type": "application/json",
+
+								Cache: "no-cache",
+							},
+							withCredentials: true,
+						}
 					)
 					.then((res) => {
 						window.alert("글이 수정되었습니다.");
@@ -76,6 +85,13 @@ export default function ColumnWrite() {
 							body,
 						},
 						{
+							headers: {
+								Accept: "application/json",
+
+								"Content-Type": "application/json",
+
+								Cache: "no-cache",
+							},
 							withCredentials: true,
 						}
 					)

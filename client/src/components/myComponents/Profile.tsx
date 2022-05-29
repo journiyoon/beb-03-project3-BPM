@@ -17,6 +17,13 @@ export default function Profile() {
 	useEffect(() => {
 		axios
 			.get("https://bpmserver.cf/user/mypage", {
+				headers: {
+					Accept: "application/json",
+
+					"Content-Type": "application/json",
+
+					Cache: "no-cache",
+				},
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -47,6 +54,13 @@ export default function Profile() {
 						username: formData.get("username"),
 					},
 					{
+						headers: {
+							Accept: "application/json",
+
+							"Content-Type": "application/json",
+
+							Cache: "no-cache",
+						},
 						withCredentials: true,
 					}
 				)
@@ -66,6 +80,13 @@ export default function Profile() {
 						email: formData.get("email"),
 					},
 					{
+						headers: {
+							Accept: "application/json",
+
+							"Content-Type": "application/json",
+
+							Cache: "no-cache",
+						},
 						withCredentials: true,
 					}
 				)
@@ -80,6 +101,13 @@ export default function Profile() {
 						desc: formData.get("desc"),
 					},
 					{
+						headers: {
+							Accept: "application/json",
+
+							"Content-Type": "application/json",
+
+							Cache: "no-cache",
+						},
 						withCredentials: true,
 					}
 				)

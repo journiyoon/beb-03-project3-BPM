@@ -36,6 +36,13 @@ export default function MyComment() {
 
 	async function Comments() {
 		const comment = await axios.get("https://bpmserver.cf/mypage/comments", {
+			headers: {
+				Accept: "application/json",
+
+				"Content-Type": "application/json",
+
+				Cache: "no-cache",
+			},
 			withCredentials: true,
 		});
 		return comment.data.data;

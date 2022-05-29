@@ -27,6 +27,13 @@ export default function ColumnDetail() {
 		if (userInfo !== null) {
 			axios
 				.get(`https://bpmserver.cf/column/${params.columnid}/checklike`, {
+					headers: {
+						Accept: "application/json",
+
+						"Content-Type": "application/json",
+
+						Cache: "no-cache",
+					},
 					withCredentials: true,
 				})
 				.then((res) => {
@@ -55,6 +62,13 @@ export default function ColumnDetail() {
 						`https://bpmserver.cf/column/${params.columnid}/like`,
 						{},
 						{
+							headers: {
+								Accept: "application/json",
+
+								"Content-Type": "application/json",
+
+								Cache: "no-cache",
+							},
 							withCredentials: true,
 						}
 					)
@@ -73,6 +87,13 @@ export default function ColumnDetail() {
 						`https://bpmserver.cf/column/${params.columnid}/unlike`,
 						{},
 						{
+							headers: {
+								Accept: "application/json",
+
+								"Content-Type": "application/json",
+
+								Cache: "no-cache",
+							},
 							withCredentials: true,
 						}
 					)
