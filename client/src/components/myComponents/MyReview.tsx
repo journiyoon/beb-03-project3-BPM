@@ -35,12 +35,9 @@ export default function MyReview() {
 	};
 
 	async function Reviews() {
-		const review = await axios.get(
-			"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/mypage/reviews",
-			{
-				withCredentials: true,
-			}
-		);
+		const review = await axios.get("https://bpmserver.cfmypage/reviews", {
+			withCredentials: true,
+		});
 		console.log(review.data.data);
 		return review.data.data;
 	}

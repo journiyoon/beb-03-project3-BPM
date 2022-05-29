@@ -43,13 +43,10 @@ export default function CreateBoard() {
 			)
 			.then((res: any) => {
 				axios
-					.post(
-						"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/board/create",
-						{
-							title: title,
-							subtitle: subtitle,
-						}
-					)
+					.post("https://bpmserver.cfboard/create", {
+						title: title,
+						subtitle: subtitle,
+					})
 					.then((res) => {
 						if (
 							res.data.message === "요청하신 게시판은 검토를 통해 생성됩니다."

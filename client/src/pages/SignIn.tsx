@@ -37,10 +37,7 @@ export default function SignIn() {
 	const disconnet = () => {
 		provider = null;
 		axios
-			.post(
-				"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/logout",
-				{ withCredentials: true }
-			)
+			.post("https://bpmserver.cfuser/logout", { withCredentials: true })
 			.then(() => {
 				dispatch(unsetUser());
 			});
@@ -49,7 +46,7 @@ export default function SignIn() {
 	const onSign = (address: string) => {
 		axios
 			.post(
-				"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/signin",
+				"https://bpmserver.cfuser/signin",
 				{
 					address: address,
 				},

@@ -16,12 +16,9 @@ export default function Profile() {
 
 	useEffect(() => {
 		axios
-			.get(
-				"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/mypage",
-				{
-					withCredentials: true,
-				}
-			)
+			.get("https://bpmserver.cfuser/mypage", {
+				withCredentials: true,
+			})
 			.then((res) => {
 				setAddress(res.data.data.address);
 				setName(res.data.data.username);
@@ -45,7 +42,7 @@ export default function Profile() {
 			}
 			axios
 				.patch(
-					"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/update",
+					"https://bpmserver.cfuser/update",
 					{
 						username: formData.get("username"),
 					},
@@ -64,7 +61,7 @@ export default function Profile() {
 		} else if (formData.get("email")) {
 			axios
 				.patch(
-					"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/update",
+					"https://bpmserver.cfuser/update",
 					{
 						email: formData.get("email"),
 					},
@@ -78,7 +75,7 @@ export default function Profile() {
 		} else if (formData.get("desc")) {
 			axios
 				.patch(
-					"https://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/user/update",
+					"https://bpmserver.cfuser/update",
 					{
 						desc: formData.get("desc"),
 					},
