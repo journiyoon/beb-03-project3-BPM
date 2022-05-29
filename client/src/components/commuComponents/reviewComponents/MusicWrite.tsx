@@ -45,7 +45,9 @@ export default function MusicWrite() {
 		setBody(event.target.value);
 	}
 	const getChart = async () => {
-		const chart = await axios.get("http://localhost:4000/main/allchart");
+		const chart = await axios.get(
+			"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/main/allchart"
+		);
 		return chart.data.data;
 	};
 	useEffect(() => {
@@ -81,7 +83,7 @@ export default function MusicWrite() {
 				if (state) {
 					await axios
 						.patch(
-							`http://localhost:4000/review/${state.id}`,
+							`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/review/${state.id}`,
 							{
 								body,
 								evaluation: {
@@ -108,7 +110,7 @@ export default function MusicWrite() {
 				} else {
 					await axios
 						.post(
-							`http://localhost:4000/review`,
+							`http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/review`,
 							{
 								title,
 								body,

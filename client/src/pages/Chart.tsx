@@ -18,12 +18,16 @@ import { borderTop } from "@mui/system";
 
 export default function Chart() {
 	async function getOurChart() {
-		const ourChart = await axios.get("http://localhost:4000/main/ourchart");
+		const ourChart = await axios.get(
+			"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/main/ourchart"
+		);
 		return ourChart.data.data;
 	}
 
 	async function getAllChart() {
-		const allChart = await axios.get("http://localhost:4000/main/allchart");
+		const allChart = await axios.get(
+			"http://bpm-env-1.eba-ps4xgif2.us-east-1.elasticbeanstalk.com/main/allchart"
+		);
 		return allChart.data.data;
 	}
 	return (
