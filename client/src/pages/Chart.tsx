@@ -29,7 +29,7 @@ export default function Chart() {
   return (
     <>
       <Grid container p={5} spacing={5}>
-        <Grid item lg={5} md={12}>
+        <Grid item lg={6} md={12}>
           {/* 우리 차트 */}
           <Typography textAlign="center" variant="h3" my={10} fontFamily="Play">
             <span
@@ -136,7 +136,7 @@ export default function Chart() {
             </Table>
           </TableContainer>
         </Grid>
-        <Grid item lg={5} md={12}>
+        <Grid item lg={6} md={12}>
           {/* 멜론 차트 */}
           <Typography
             textAlign="center"
