@@ -29,24 +29,9 @@ export default function Chart() {
   return (
     <>
       <Grid container p={5} spacing={5}>
-        <Grid item lg={7} md={12}>
+        <Grid item lg={5} md={12}>
           {/* 우리 차트 */}
-          <Typography
-            textAlign="center"
-            variant="h3"
-            my={10}
-            // fontFamily="Copperplate"
-            // fontFamily="Papyrus"
-            // fontFamily="Lucida Handwriting"
-            // fontFamily="Monaco"
-            // fontFamily="cursive"
-            // fontFamily="fantasy"
-            // fontFamily="Tahoma"
-            // fontFamily="Teko"
-            fontFamily="Play"
-            // fontFamily="Great Vibes"
-            // fontFamily="Sacramento"
-          >
+          <Typography textAlign="center" variant="h3" my={10} fontFamily="Play">
             <span
               style={{
                 fontFamily: "Play",
